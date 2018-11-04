@@ -1,5 +1,5 @@
 //
-// Created by Doug on 3/11/2018.
+// Created by Saturnation on 3/11/2018.
 //
 
 #ifndef LIBTCOD_TUTORIAL_LIST_H

@@ -1,5 +1,5 @@
 //
-// Created by Doug on 2/11/2018.
+// Created by Saturnation on 2/11/2018.
 //
 
 #include <stdbool.h>

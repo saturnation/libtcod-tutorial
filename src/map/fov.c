@@ -1,5 +1,5 @@
 //
-// Created by Doug on 3/11/2018.
+// Created by Saturnation on 3/11/2018.
 //
 
 #include <libtcod.h>

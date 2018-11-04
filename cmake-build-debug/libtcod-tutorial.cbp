@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/ai.c">
+			<Option target="libtcod-tutorial"/>
+		</Unit>
+		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/ai.h">
+			<Option target="libtcod-tutorial"/>
+		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/fighter.c">
 			<Option target="libtcod-tutorial"/>
 		</Unit>
