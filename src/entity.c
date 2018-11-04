@@ -3,6 +3,7 @@
 //
 
 #include <malloc.h>
+#include <stdio.h>
 #include "entity.h"
 
 void move(entity *e, int dx, int dy) {
@@ -16,7 +17,8 @@ entity *create_entity(int x,
                       TCOD_color_t color,
                       char *name,
                       bool blocks,
-                      fighter *fighter) {
+                      fighter *fighter,
+                      void (*ai_action)(entity *)) {
     entity *e = malloc(sizeof(entity));
     e->x = x;
     e->y = y;
@@ -25,7 +27,12 @@ entity *create_entity(int x,
     e->name = name;
     e->blocks = blocks;
     e->fighter = fighter;
-
+    e->ai_action;
     return e;
 }
+
+void basic_ai_monster_turn(entity *e) {
+    printf("The %s wonders when it will get to move.\n", e->name);
+}
+
 

@@ -66,10 +66,13 @@ void place_entities(game_map* map, rectangle* room, entity_list *e, int max_mons
         }
         if (location_empty) {
             prev->next = (entity_list *)malloc(sizeof(entity_list));
+            void(*ai_action)(entity *) = &basic_ai_monster_turn;
             if (TCOD_random_get_int(rng, 0, 100) < 80) {
-                prev->next->data = create_entity(x, y, 'o', TCOD_desaturated_green, "Orc", true, NULL);
+                fighter *fighter = create_fighter(10, 0, 3);
+                prev->next->data = create_entity(x, y, 'o', TCOD_desaturated_green, "Orc", true, fighter, ai_action);
             } else {
-                prev->next->data = create_entity(x, y, 'T', TCOD_darker_green, "Troll", true, NULL);
+                fighter *fighter = create_fighter(16, 1, 4);
+                prev->next->data = create_entity(x, y, 'T', TCOD_darker_green, "Troll", true, fighter, ai_action);
             }
             i++;
         }

@@ -38,7 +38,7 @@ int main() {
     entities_list_head->next = NULL;
     player = entities_list_head;
     fighter *fighter = create_fighter(30, 2, 5);
-    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, fighter);
+    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, fighter, NULL);
     TCOD_console_set_custom_font("terminal16x16_gs_ro.png",
                                  TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW,
                                  16,
@@ -113,8 +113,8 @@ int main() {
             if (game_state == ENEMY_TURN) {
                 entity_list *curr = entities_list_head;
                 while (curr != NULL) {
-                    if (curr != player) {
-                        printf("The %s ponders the meaning of existence.\n", curr->data->name);
+                    if (curr->data->ai_action) {
+                        (*curr->data->ai_action)(curr->data);
                     }
                     curr = curr->next;
                 }

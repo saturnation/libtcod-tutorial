@@ -9,7 +9,7 @@
 
 #include "components/fighter.h"
 
-typedef struct {
+typedef struct entity {
     int x;
     int y;
     char c;
@@ -17,6 +17,7 @@ typedef struct {
     char *name;
     bool blocks;
     fighter *fighter;
+    void (*ai_action)(struct entity *);
 } entity;
 
 entity *create_entity(int x,
@@ -25,9 +26,11 @@ entity *create_entity(int x,
                       TCOD_color_t color,
                       char *name,
                       bool blocks,
-                      fighter *fighter);
+                      fighter *fighter,
+                      void(*ai_action)(entity *));
 
 void move(entity *e, int dx, int dy);
 
+void basic_ai_monster_turn(entity* e);
 
 #endif //LIBTCOD_TUTORIAL_ENTITY_H
