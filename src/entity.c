@@ -27,7 +27,7 @@ entity *create_entity(int x,
     e->name = name;
     e->blocks = blocks;
     e->fighter = fighter;
-    e->ai_action;
+    e->ai_action = ai_action;
     return e;
 }
 
