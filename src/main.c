@@ -37,7 +37,8 @@ int main() {
     entities_list_head = (entity_list *) malloc(sizeof(entity_list));
     entities_list_head->next = NULL;
     player = entities_list_head;
-    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, NULL);
+    fighter *fighter = create_fighter(30, 2, 5);
+    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, fighter);
     TCOD_console_set_custom_font("terminal16x16_gs_ro.png",
                                  TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW,
                                  16,

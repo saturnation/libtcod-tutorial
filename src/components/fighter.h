@@ -12,6 +12,5 @@ typedef struct {
     int power;
 } fighter;
 
-#include "../entity.h"
-
+fighter *create_fighter(int hp, int defense, int power);
 #endif //LIBTCOD_TUTORIAL_FIGHTER_H
