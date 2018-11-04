@@ -2,8 +2,8 @@
 // Created by Doug on 2/11/2018.
 //
 
-#ifndef RL1_ENTITY_H
-#define RL1_ENTITY_H
+#ifndef LIBTCOD_TUTORIAL_ENTITY_H
+#define LIBTCOD_TUTORIAL_ENTITY_H
 
 #include <libtcod/color.h>
 
@@ -25,4 +25,4 @@ void move(game_map* map, entity *e, int dx, int dy);
 
 entity* get_blocking_entities_at_location(entity_list *e, int destination_x, int destination_y);
 
-#endif //RL1_ENTITY_H
+#endif //LIBTCOD_TUTORIAL_ENTITY_H

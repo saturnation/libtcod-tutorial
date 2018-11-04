@@ -2,8 +2,8 @@
 // Created by Doug on 3/11/2018.
 //
 
-#ifndef RL1_LIST_H
-#define RL1_LIST_H
+#ifndef LIBTCOD_TUTORIAL_LIST_H
+#define LIBTCOD_TUTORIAL_LIST_H
 
 #include "../entity.h"
 
@@ -14,4 +14,4 @@ struct node {
 
 typedef struct node entity_list;
 
-#endif //RL1_LIST_H
+#endif //LIBTCOD_TUTORIAL_LIST_H

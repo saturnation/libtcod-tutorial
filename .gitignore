@@ -54,6 +54,6 @@ cmake-build-debug/cmake_install.cmake
 cmake-build-debug/CMakeCache.txt
 cmake-build-debug/CMakeFiles
 cmake-build-debug/Makefile
-cmake-build-debug/rl1.cbp
-cmake-build-debug/rl1.exe.stackdump
+cmake-build-debug/libtcod_tutorial.cbp
+cmake-build-debug/libtcod_tutorial.exe.stackdump
 

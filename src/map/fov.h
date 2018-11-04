@@ -5,10 +5,10 @@
 #include <libtcod/fov_types.h>
 #include "game_map.h"
 
-#ifndef RL1_FOV_H
-#define RL1_FOV_H
+#ifndef LIBTCOD_TUTORIAL_FOV_H
+#define LIBTCOD_TUTORIAL_FOV_H
 
 TCOD_Map* initialize_fov(game_map *map);
 void recompute_fov(TCOD_Map* fov_map, int x, int y, int radius, bool light_walls, int algorithm);
 
-#endif //RL1_FOV_H
+#endif //LIBTCOD_TUTORIAL_FOV_H

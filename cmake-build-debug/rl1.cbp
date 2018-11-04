@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="libtcod-tutorial"/>
+		<Option title="rl1"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -12,16 +12,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -37,31 +27,18 @@
 					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="libtcod-tutorial">
-				<Option output="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/libtcod-tutorial.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="rebuild_cache">
 				<Option working_dir="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/cygdrive/e/code/c/libtcod-tutorial/lib/libtcod-1.9.0-x86_64-msvc/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 libtcod-tutorial"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="libtcod-tutorial/fast">
-				<Option output="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/libtcod-tutorial.exe" prefix_auto="0" extension_auto="0"/>
+			<Target title="rl1">
+				<Option output="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/rl1.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -77,69 +54,86 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 libtcod-tutorial/fast"/>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 rl1"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rl1/fast">
+				<Option output="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/rl1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/e/code/c/libtcod-tutorial/lib/libtcod-1.9.0-x86_64-msvc/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 rl1/fast"/>
 					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/e/code/c/libtcod-tutorial/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/fighter.c">
-			<Option target="libtcod-tutorial"/>
-		</Unit>
-		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/fighter.h">
-			<Option target="libtcod-tutorial"/>
-		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/data/enums.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/data/list.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/entity.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/entity.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/input_handlers.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/input_handlers.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/main.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/fov.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/fov.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/game_map.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/game_map.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/rectangle.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/rectangle.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/tile.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/tile.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/render_functions.c">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/render_functions.h">
-			<Option target="libtcod-tutorial"/>
+			<Option target="rl1"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

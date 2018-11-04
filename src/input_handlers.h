@@ -4,8 +4,8 @@
 
 #include <libtcod/console_types.h>
 
-#ifndef RL1_INPUT_HANDLERS_H
-#define RL1_INPUT_HANDLERS_H
+#ifndef LIBTCOD_TUTORIAL_INPUT_HANDLERS_H
+#define LIBTCOD_TUTORIAL_INPUT_HANDLERS_H
 
 #define NO_ACTION -1
 
@@ -19,4 +19,4 @@
 
 int handle_keys(TCOD_key_t *k);
 
-#endif //RL1_INPUT_HANDLERS_H
+#endif //LIBTCOD_TUTORIAL_INPUT_HANDLERS_H

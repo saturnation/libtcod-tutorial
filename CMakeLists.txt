@@ -24,7 +24,7 @@ set(SOURCE_FILES src/main.c
         src/map/rectangle.h
         src/map/fov.c
         src/map/fov.h
-        src/data/list.h src/data/enums.h)
+        src/data/list.h src/data/enums.h src/components/fighter.c src/components/fighter.h)
 
 add_executable(libtcod-tutorial ${SOURCE_FILES})
 target_link_libraries(libtcod-tutorial libtcod)

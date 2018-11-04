@@ -4,8 +4,8 @@
 
 #include <stdbool.h>
 
-#ifndef RL1_RECTANGLE_H
-#define RL1_RECTANGLE_H
+#ifndef LIBTCOD_TUTORIAL_RECTANGLE_H
+#define LIBTCOD_TUTORIAL_RECTANGLE_H
 
 typedef struct {
     int x1;
@@ -18,4 +18,4 @@ rectangle* create_rectangle(int x, int y, int width, int height);
 int* center(rectangle* rectangle);
 bool intersect(rectangle* r1, rectangle* r2);
 
-#endif //RL1_RECTANGLE_H
+#endif //LIBTCOD_TUTORIAL_RECTANGLE_H

@@ -41,7 +41,7 @@ int main() {
                                  TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW,
                                  16,
                                  16);
-    TCOD_console_init_root(screen_width, screen_height, "Dungeon Dive", false, TCOD_RENDERER_SDL2);
+    TCOD_console_init_root(screen_width, screen_height, "libtcod Tutorial", false, TCOD_RENDERER_SDL2);
     TCOD_console_t con = TCOD_console_new(screen_width, screen_height);
 
     game_map *map = create_game_map(map_width, map_height);

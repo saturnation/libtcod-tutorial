@@ -5,8 +5,8 @@
 #include <stdbool.h>
 #include <libtcod/color.h>
 
-#ifndef RL1_TILE_H
-#define RL1_TILE_H
+#ifndef LIBTCOD_TUTORIAL_TILE_H
+#define LIBTCOD_TUTORIAL_TILE_H
 
 #define DARK_WALL 0
 #define DARK_GROUND 1
@@ -20,4 +20,4 @@ typedef struct {
 } tile;
 
 void create_tile(tile* t, bool blocked, bool blocked_sight);
-#endif //RL1_TILE_H
+#endif //LIBTCOD_TUTORIAL_TILE_H

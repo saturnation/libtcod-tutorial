@@ -8,8 +8,8 @@
 #include "map/game_map.h"
 #include "data/list.h"
 
-#ifndef RL1_RENDER_FUNCTIONS_H
-#define RL1_RENDER_FUNCTIONS_H
+#ifndef LIBTCOD_TUTORIAL_RENDER_FUNCTIONS_H
+#define LIBTCOD_TUTORIAL_RENDER_FUNCTIONS_H
 
 void render_all(TCOD_console_t con,
                 entity_list *e,
@@ -23,4 +23,4 @@ void clear_all(TCOD_console_t con, entity_list *e);
 void draw_entity(TCOD_console_t con, entity* e, TCOD_Map* fov_map);
 void clear_entity(TCOD_console_t con, entity* e);
 
-#endif //RL1_RENDER_FUNCTIONS_H
+#endif //LIBTCOD_TUTORIAL_RENDER_FUNCTIONS_H
