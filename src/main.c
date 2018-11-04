@@ -7,6 +7,7 @@
 #include "map/game_map.h"
 #include "map/fov.h"
 #include "data/enums.h"
+#include "data/list.h"
 
 bool move_action(int action) {
     return action == MOVE_UP || action == MOVE_DOWN || action == MOVE_RIGHT || action == MOVE_LEFT;
@@ -36,7 +37,7 @@ int main() {
     entities_list_head = (entity_list *) malloc(sizeof(entity_list));
     entities_list_head->next = NULL;
     player = entities_list_head;
-    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true);
+    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, NULL);
     TCOD_console_set_custom_font("terminal16x16_gs_ro.png",
                                  TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW,
                                  16,
@@ -97,7 +98,7 @@ int main() {
                     if (target) {
                         printf("You kick the %s in the shins, much to its annoyance!\n", target->name);
                     } else {
-                        move(map, player->data, dx, dy);
+                        move(player->data, dx, dy);
                         fov_recompute = true;
                     }
                 }

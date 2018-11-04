@@ -6,15 +6,15 @@
 #define LIBTCOD_TUTORIAL_GAME_MAP_H
 
 #include "tile.h"
+#include "rectangle.h"
+#include "../data/list.h"
+
 typedef struct {
     int width;
     int height;
     tile **map;
 } game_map;
 
-#include "rectangle.h"
-#include "../entity.h"
-#include "../data/list.h"
 
 game_map *create_game_map(int width, int height);
 

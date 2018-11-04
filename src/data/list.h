@@ -14,4 +14,6 @@ struct node {
 
 typedef struct node entity_list;
 
+entity *get_blocking_entities_at_location(entity_list *e, int destination_x, int destination_y);
+
 #endif //LIBTCOD_TUTORIAL_LIST_H

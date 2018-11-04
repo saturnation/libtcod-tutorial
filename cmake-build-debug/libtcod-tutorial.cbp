@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/ai.c">
-			<Option target="libtcod-tutorial"/>
-		</Unit>
-		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/ai.h">
-			<Option target="libtcod-tutorial"/>
-		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/components/fighter.c">
 			<Option target="libtcod-tutorial"/>
 		</Unit>
@@ -97,6 +91,9 @@
 			<Option target="libtcod-tutorial"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/data/enums.h">
+			<Option target="libtcod-tutorial"/>
+		</Unit>
+		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/data/list.c">
 			<Option target="libtcod-tutorial"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/data/list.h">

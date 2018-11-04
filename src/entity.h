@@ -7,22 +7,27 @@
 
 #include <libtcod/color.h>
 
+#include "components/fighter.h"
+
 typedef struct {
     int x;
     int y;
     char c;
     TCOD_color_t color;
-    char* name;
+    char *name;
     bool blocks;
+    fighter *fighter;
 } entity;
 
-#include "data/list.h"
-#include "map/game_map.h"
+entity *create_entity(int x,
+                      int y,
+                      char c,
+                      TCOD_color_t color,
+                      char *name,
+                      bool blocks,
+                      fighter *fighter);
 
-entity* create_entity(int x, int y, char c, TCOD_color_t color, char* name, bool blocks);
+void move(entity *e, int dx, int dy);
 
-void move(game_map* map, entity *e, int dx, int dy);
-
-entity* get_blocking_entities_at_location(entity_list *e, int destination_x, int destination_y);
 
 #endif //LIBTCOD_TUTORIAL_ENTITY_H

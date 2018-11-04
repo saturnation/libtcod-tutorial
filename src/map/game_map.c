@@ -8,8 +8,6 @@
 #include <libtcod/mersenne_types.h>
 #include <libtcod/mersenne.h>
 #include "game_map.h"
-#include "tile.h"
-#include "../data/list.h"
 
 game_map *create_game_map(int width, int height) {
     game_map *map = malloc(sizeof(game_map));
@@ -69,9 +67,9 @@ void place_entities(game_map* map, rectangle* room, entity_list *e, int max_mons
         if (location_empty) {
             prev->next = (entity_list *)malloc(sizeof(entity_list));
             if (TCOD_random_get_int(rng, 0, 100) < 80) {
-                prev->next->data = create_entity(x, y, 'o', TCOD_desaturated_green, "Orc", true);
+                prev->next->data = create_entity(x, y, 'o', TCOD_desaturated_green, "Orc", true, NULL);
             } else {
-                prev->next->data = create_entity(x, y, 'T', TCOD_darker_green, "Troll", true);
+                prev->next->data = create_entity(x, y, 'T', TCOD_darker_green, "Troll", true, NULL);
             }
             i++;
         }
