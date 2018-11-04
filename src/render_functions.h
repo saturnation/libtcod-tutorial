@@ -1,0 +1,26 @@
+//
+// Created by Doug on 2/11/2018.
+//
+
+#include <libtcod/console_types.h>
+#include <libtcod/fov_types.h>
+#include "entity.h"
+#include "map/game_map.h"
+#include "data/list.h"
+
+#ifndef RL1_RENDER_FUNCTIONS_H
+#define RL1_RENDER_FUNCTIONS_H
+
+void render_all(TCOD_console_t con,
+                entity_list *e,
+                game_map* map,
+                TCOD_Map* fov_map,
+                bool fov_recompute,
+                int width,
+                int height,
+                TCOD_color_t* colors);
+void clear_all(TCOD_console_t con, entity_list *e);
+void draw_entity(TCOD_console_t con, entity* e, TCOD_Map* fov_map);
+void clear_entity(TCOD_console_t con, entity* e);
+
+#endif //RL1_RENDER_FUNCTIONS_H
