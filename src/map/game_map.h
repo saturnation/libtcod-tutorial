@@ -19,7 +19,6 @@ struct game_map {
 #include "rectangle.h"
 #include "../data/list.h"
 
-
 struct game_map *create_game_map(int width, int height);
 
 bool is_blocked(struct game_map *map, int x, int y);
@@ -45,4 +44,6 @@ void move_toward(struct entity *e, struct entity *target, struct game_map *map, 
 void basic_ai_monster_turn(struct entity* e, struct entity *target, TCOD_Map *fov_map, struct game_map *map, struct entity_list *entity_list);
 
 double distance_to(struct entity *e, struct entity *target);
+
+void move_astar(struct entity *e, struct entity *target, struct entity_list *entity_list, struct game_map *map);
 #endif //LIBTCOD_TUTORIAL_GAME_MAP_H

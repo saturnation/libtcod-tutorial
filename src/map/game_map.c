@@ -158,6 +158,8 @@ void move_toward(struct entity *e, struct entity *target, struct game_map *map, 
     }
 }
 
+
+
 double distance_to(struct entity *e, struct entity *target) {
     return sqrt(pow(target->x - e->x, 2) + pow(target->y - e->y, 2));
 }
@@ -165,9 +167,43 @@ double distance_to(struct entity *e, struct entity *target) {
 void basic_ai_monster_turn(struct entity *e, struct entity *target, TCOD_Map *fov_map, struct game_map *map, struct entity_list *entity_list) {
     if (TCOD_map_is_in_fov(fov_map, e->x, e->y)) {
         if (distance_to(e, target) >= 2) {
-            move_toward(e, target, map, entity_list);
+            move_astar(e, target, entity_list, map);
         } else if (target->fighter && target->fighter->hp > 0) {
             printf("The %s insults you! Your ego is damaged!\n", e->name);
         }
     }
+}
+
+// TODO review and make sure this works properly
+void move_astar(struct entity *e, struct entity *target, struct entity_list *entity_list, struct game_map *map) {
+    TCOD_Map *fov = TCOD_map_new(map->width, map->height);
+    for (int y = 0; y < map->height; y++) {
+        for (int x = 0; x < map->width; x++) {
+            TCOD_map_set_properties(fov,
+                                    x,
+                                    y,
+                                    !map->map[y][x].blocked_sight,
+                                    !map->map[y][x].blocked);
+        }
+    }
+    struct entity_list *curr = entity_list;
+    while (curr != NULL) {
+        struct entity *curr_e = curr->data;
+        if (curr_e->blocks && curr_e != e && curr_e != target) {
+            TCOD_map_set_properties(fov, curr_e->x, curr_e->y, true, false);
+        }
+        curr = curr->next;
+    }
+    TCOD_path_t my_path = TCOD_path_new_using_map(fov, 1.41);
+    TCOD_path_compute(my_path, e->x, e->y, target->x, target->y);
+    if(!TCOD_path_is_empty(my_path) && TCOD_path_size(my_path) < 25) {
+        int x, y;
+        if (TCOD_path_walk(my_path, &x, &y, true)) {
+            e->x = x;
+            e->y = y;
+        }
+    } else {
+        move_toward(e, target, map, entity_list);
+    }
+    TCOD_path_delete(my_path);
 }
