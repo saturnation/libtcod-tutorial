@@ -4,6 +4,7 @@
 
 #include <libtcod/console.h>
 #include <libtcod.h>
+#include <stdio.h>
 #include "render_functions.h"
 #include "entity.h"
 #include "map/game_map.h"
@@ -22,8 +23,8 @@ void draw_entity(TCOD_console_t con, struct entity *e, TCOD_Map* fov_map) {
 
 void clear_all(TCOD_console_t con, struct entity_list *e) {
     struct entity_list *curr = e;
-    while (curr->next != NULL) {
-        clear_entity(con, e->data);
+    while (curr != NULL) {
+        clear_entity(con, curr->data);
         curr = curr->next;
     }
 }
