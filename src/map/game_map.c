@@ -154,7 +154,7 @@ void move_toward(struct entity *e, struct entity *target, struct game_map *map, 
     dy = (int) round(dy / distance);
     if (!is_blocked(map, e->x + dx, e->y + dy)
         || !get_blocking_entities_at_location(entity_list, e->x + dx, e->y + dy)) {
-        move(e, e->x + dx, e->y + dy);
+        move(e, dx, dy);
     }
 }
 
