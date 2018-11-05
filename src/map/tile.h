@@ -13,11 +13,11 @@
 #define LIGHT_WALL 2
 #define LIGHT_GROUND 3
 
-typedef struct {
+struct tile {
     bool blocked;
     bool blocked_sight;
     bool explored;
 } tile;
 
-void create_tile(tile* t, bool blocked, bool blocked_sight);
+void create_tile(struct tile* t, bool blocked, bool blocked_sight);
 #endif //LIBTCOD_TUTORIAL_TILE_H

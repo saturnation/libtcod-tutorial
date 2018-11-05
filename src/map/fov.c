@@ -7,7 +7,7 @@
 #include "game_map.h"
 #include "tile.h"
 
-TCOD_Map* initialize_fov(game_map *map) {
+TCOD_Map* initialize_fov(struct game_map *map) {
     TCOD_Map *fov_map = TCOD_map_new(map->width, map->height);
     for (int y = 0; y < map->height; y++) {
         for (int x = 0; x < map->width; x++) {

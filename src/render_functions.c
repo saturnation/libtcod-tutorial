@@ -9,19 +9,19 @@
 #include "map/game_map.h"
 #include "map/tile.h"
 
-void clear_entity(TCOD_console_t con, entity *e) {
+void clear_entity(TCOD_console_t con, struct entity *e) {
     TCOD_console_put_char(con, e->x, e->y, ' ', TCOD_BKGND_NONE);
 }
 
-void draw_entity(TCOD_console_t con, entity *e, TCOD_Map* fov_map) {
+void draw_entity(TCOD_console_t con, struct entity *e, TCOD_Map* fov_map) {
     if (TCOD_map_is_in_fov(fov_map, e->x, e->y)) {
         TCOD_console_set_default_foreground(con, e->color);
         TCOD_console_put_char(con, e->x, e->y, e->c, TCOD_BKGND_NONE);
     }
 }
 
-void clear_all(TCOD_console_t con, entity_list *e) {
-    entity_list *curr = e;
+void clear_all(TCOD_console_t con, struct entity_list *e) {
+    struct entity_list *curr = e;
     while (curr->next != NULL) {
         clear_entity(con, e->data);
         curr = curr->next;
@@ -29,8 +29,8 @@ void clear_all(TCOD_console_t con, entity_list *e) {
 }
 
 void render_all(TCOD_console_t con,
-                entity_list *e,
-                game_map *map,
+                struct entity_list *e,
+                struct game_map *map,
                 TCOD_Map *fov_map,
                 bool fov_recompute,
                 int width,
@@ -59,7 +59,7 @@ void render_all(TCOD_console_t con,
         }
     }
 
-    entity_list *curr = e;
+    struct entity_list *curr = e;
     while (curr != NULL) {
         draw_entity(con, curr->data, fov_map);
         curr = curr->next;

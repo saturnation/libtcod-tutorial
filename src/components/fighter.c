@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include "fighter.h"
 
-fighter *create_fighter(int hp, int defense, int power) {
-    fighter *f = malloc(sizeof(fighter));
+struct fighter *create_fighter(int hp, int defense, int power) {
+    struct fighter *f = malloc(sizeof(struct fighter));
     f->hp = hp;
     f->defense = defense;
     f->power = power;

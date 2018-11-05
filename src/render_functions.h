@@ -12,15 +12,15 @@
 #define LIBTCOD_TUTORIAL_RENDER_FUNCTIONS_H
 
 void render_all(TCOD_console_t con,
-                entity_list *e,
-                game_map* map,
+                struct entity_list *e,
+                struct game_map* map,
                 TCOD_Map* fov_map,
                 bool fov_recompute,
                 int width,
                 int height,
                 TCOD_color_t* colors);
-void clear_all(TCOD_console_t con, entity_list *e);
-void draw_entity(TCOD_console_t con, entity* e, TCOD_Map* fov_map);
-void clear_entity(TCOD_console_t con, entity* e);
+void clear_all(TCOD_console_t con, struct entity_list *e);
+void draw_entity(TCOD_console_t con, struct entity* e, TCOD_Map* fov_map);
+void clear_entity(TCOD_console_t con, struct entity* e);
 
 #endif //LIBTCOD_TUTORIAL_RENDER_FUNCTIONS_H

@@ -6,20 +6,20 @@
 #include <stdio.h>
 #include "entity.h"
 
-void move(entity *e, int dx, int dy) {
+void move(struct entity *e, int dx, int dy) {
     e->x += dx;
     e->y += dy;
 }
 
-entity *create_entity(int x,
+struct entity *create_entity(int x,
                       int y,
                       char c,
                       TCOD_color_t color,
                       char *name,
                       bool blocks,
-                      fighter *fighter,
-                      void (*ai_action)(entity *)) {
-    entity *e = malloc(sizeof(entity));
+                      struct fighter *fighter,
+                      void (*ai_action)(struct entity *, struct entity *, TCOD_Map *, struct game_map *, struct entity_list *)) {
+    struct entity *e = malloc(sizeof(struct entity));
     e->x = x;
     e->y = y;
     e->c = c;
@@ -30,9 +30,4 @@ entity *create_entity(int x,
     e->ai_action = ai_action;
     return e;
 }
-
-void basic_ai_monster_turn(entity *e) {
-    printf("The %s wonders when it will get to move.\n", e->name);
-}
-
 

@@ -6,31 +6,39 @@
 #define LIBTCOD_TUTORIAL_ENTITY_H
 
 #include <libtcod/color.h>
+#include <libtcod/fov_types.h>
 
-#include "components/fighter.h"
+struct game_map;
+struct entity_list;
 
-typedef struct entity {
+struct entity {
     int x;
     int y;
     char c;
     TCOD_color_t color;
     char *name;
     bool blocks;
-    fighter *fighter;
-    void (*ai_action)(struct entity *);
-} entity;
+    struct fighter *fighter;
 
-entity *create_entity(int x,
-                      int y,
-                      char c,
-                      TCOD_color_t color,
-                      char *name,
-                      bool blocks,
-                      fighter *fighter,
-                      void(*ai_action)(entity *));
+    void (*ai_action)(struct entity *, struct entity *, TCOD_Map *, struct game_map *, struct entity_list *);
+};
 
-void move(entity *e, int dx, int dy);
+#include "components/fighter.h"
+#include "map/game_map.h"
+#include "data/list.h"
 
-void basic_ai_monster_turn(entity* e);
+struct entity *create_entity(int x,
+                             int y,
+                             char c,
+                             TCOD_color_t color,
+                             char *name,
+                             bool blocks,
+                             struct fighter *fighter,
+                             void(*ai_action)(struct entity *,
+                                              struct entity *, TCOD_Map *,
+                                              struct game_map *,
+                                              struct entity_list *));
+
+void move(struct entity *e, int dx, int dy);
 
 #endif //LIBTCOD_TUTORIAL_ENTITY_H

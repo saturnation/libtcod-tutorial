@@ -32,12 +32,12 @@ int main() {
     colors[LIGHT_WALL] = TCOD_color_RGB(130, 110, 50);
     colors[LIGHT_GROUND] = TCOD_color_RGB(200, 180, 50);
 
-    entity_list *entities_list_head;
-    entity_list *player;
-    entities_list_head = (entity_list *) malloc(sizeof(entity_list));
+    struct entity_list *entities_list_head;
+    struct entity_list *player;
+    entities_list_head = (struct entity_list *) malloc(sizeof(struct entity_list));
     entities_list_head->next = NULL;
     player = entities_list_head;
-    fighter *fighter = create_fighter(30, 2, 5);
+    struct fighter *fighter = create_fighter(30, 2, 5);
     player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, fighter, NULL);
     TCOD_console_set_custom_font("terminal16x16_gs_ro.png",
                                  TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW,
@@ -46,7 +46,7 @@ int main() {
     TCOD_console_init_root(screen_width, screen_height, "libtcod Tutorial", false, TCOD_RENDERER_SDL2);
     TCOD_console_t con = TCOD_console_new(screen_width, screen_height);
 
-    game_map *map = create_game_map(map_width, map_height);
+    struct game_map *map = create_game_map(map_width, map_height);
     make_map(map, max_rooms, room_min_size, room_max_size, map_width, map_height, player->data, entities_list_head,
              max_monsters_per_room);
 
@@ -94,7 +94,7 @@ int main() {
                 int destination_x = player->data->x + dx;
                 int destination_y = player->data->y + dy;
                 if (!is_blocked(map, destination_x, destination_y)) {
-                    entity *target = get_blocking_entities_at_location(entities_list_head, destination_x,
+                    struct entity *target = get_blocking_entities_at_location(entities_list_head, destination_x,
                                                                        destination_y);
                     if (target) {
                         printf("You kick the %s in the shins, much to its annoyance!\n", target->name);
@@ -111,10 +111,10 @@ int main() {
             }
 
             if (game_state == ENEMY_TURN) {
-                entity_list *curr = entities_list_head;
+                struct entity_list *curr = entities_list_head;
                 while (curr != NULL) {
                     if (curr->data->ai_action) {
-                        (*curr->data->ai_action)(curr->data);
+                        (*curr->data->ai_action)(curr->data, player->data, fov_map, map, entities_list_head);
                     }
                     curr = curr->next;
                 }

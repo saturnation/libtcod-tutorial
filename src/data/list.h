@@ -5,15 +5,16 @@
 #ifndef LIBTCOD_TUTORIAL_LIST_H
 #define LIBTCOD_TUTORIAL_LIST_H
 
-#include "../entity.h"
 
-struct node {
-    entity *data;
-    struct node *next;
+struct entity;
+
+struct entity_list {
+    struct entity *data;
+    struct entity_list *next;
 };
 
-typedef struct node entity_list;
+#include "../entity.h"
 
-entity *get_blocking_entities_at_location(entity_list *e, int destination_x, int destination_y);
+struct entity *get_blocking_entities_at_location(struct entity_list *e, int destination_x, int destination_y);
 
 #endif //LIBTCOD_TUTORIAL_LIST_H

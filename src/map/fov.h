@@ -8,7 +8,7 @@
 #ifndef LIBTCOD_TUTORIAL_FOV_H
 #define LIBTCOD_TUTORIAL_FOV_H
 
-TCOD_Map* initialize_fov(game_map *map);
+TCOD_Map* initialize_fov(struct game_map *map);
 void recompute_fov(TCOD_Map* fov_map, int x, int y, int radius, bool light_walls, int algorithm);
 
 #endif //LIBTCOD_TUTORIAL_FOV_H
