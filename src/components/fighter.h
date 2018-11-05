@@ -11,7 +11,7 @@ struct fighter{
     int defense;
     int power;
 };
-;
+
 
 struct fighter* create_fighter(int hp, int defense, int power);
 #endif //LIBTCOD_TUTORIAL_FIGHTER_H

@@ -9,10 +9,6 @@
 #include "data/enums.h"
 #include "data/list.h"
 
-bool move_action(int action) {
-    return action == MOVE_UP || action == MOVE_DOWN || action == MOVE_RIGHT || action == MOVE_LEFT;
-}
-
 int main() {
     int screen_width = 80;
     int screen_height = 50;
@@ -73,24 +69,11 @@ int main() {
 
         clear_all(con, entities_list_head);
 
-        int action = handle_keys(key);
-        if (action != NO_ACTION) {
-            if (move_action(action) && game_state == PLAYERS_TURN) {
-                int dx;
-                int dy;
-                if (action == MOVE_UP) {
-                    dx = 0;
-                    dy = -1;
-                } else if (action == MOVE_DOWN) {
-                    dx = 0;
-                    dy = 1;
-                } else if (action == MOVE_RIGHT) {
-                    dx = 1;
-                    dy = 0;
-                } else if (action == MOVE_LEFT) {
-                    dx = -1;
-                    dy = 0;
-                }
+        struct action *action = handle_keys(key);
+        if (action->type != NO_ACTION) {
+            if (action->type == MOVE && game_state == PLAYERS_TURN) {
+                int dx = action->data.move.dx;
+                int dy = action->data.move.dy;
                 int destination_x = player->data->x + dx;
                 int destination_y = player->data->y + dy;
                 if (!is_blocked(map, destination_x, destination_y)) {
@@ -104,9 +87,9 @@ int main() {
                     }
                 }
                 game_state = ENEMY_TURN;
-            } else if (action == EXIT) {
+            } else if (action->type == EXIT) {
                 return true;
-            } else if (action == FULLSCREEN) {
+            } else if (action->type == FULLSCREEN) {
                 TCOD_console_set_fullscreen(!TCOD_console_is_fullscreen());
             }
 

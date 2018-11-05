@@ -3,21 +3,43 @@
 //
 
 #include <libtcod/console_types.h>
+#include <stdlib.h>
 #include "input_handlers.h"
 
-int handle_keys(TCOD_key_t *k) {
+
+
+struct action* handle_keys(TCOD_key_t *k) {
+    struct action *a = malloc(sizeof(struct action));
+
     if (k->vk == TCODK_UP) {
-        return MOVE_UP;
+        a->type = MOVE;
+        a->data.move.dx = 0;
+        a->data.move.dy = -1;
+        return a;
     } else if (k->vk == TCODK_DOWN) {
-        return MOVE_DOWN;
+        a->type = MOVE;
+        a->data.move.dx = 0;
+        a->data.move.dy = 1;
+        return a;
     } else if (k->vk == TCODK_LEFT) {
-        return MOVE_LEFT;
+        a->type = MOVE;
+        a->data.move.dx = -1;
+        a->data.move.dy = 0;
+        return a;
     } else if (k->vk == TCODK_RIGHT) {
-        return MOVE_RIGHT;
+        a->type = MOVE;
+        a->data.move.dx = 1;
+        a->data.move.dy = 0;
+        return a;
     } else if (k->vk == TCODK_ENTER && k->lalt) {
-        return FULLSCREEN;
+        a->type = FULLSCREEN;
+        a->data.logic = true;
+        return a;
     } else if (k->vk == TCODK_ESCAPE) {
-        return EXIT;
+        a->type = EXIT;
+        a->data.logic = true;
+        return a;
     }
-    return NO_ACTION;
+    a->type = NO_ACTION;
+    return a;
 }
