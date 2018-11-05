@@ -28,6 +28,6 @@ struct action {
     union_action data;
 };
 
-struct action* handle_keys(TCOD_key_t *k);
+void handle_keys(TCOD_key_t *k, struct action *a);
 
 #endif //LIBTCOD_TUTORIAL_INPUT_HANDLERS_H

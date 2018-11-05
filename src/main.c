@@ -50,6 +50,8 @@ int main() {
     key = malloc(sizeof(TCOD_key_t));
     TCOD_mouse_t *mouse;
     mouse = malloc(sizeof(TCOD_mouse_t));
+    struct action *action;
+    action = malloc(sizeof(struct action));
 
     enum game_states game_state = PLAYERS_TURN;
 
@@ -69,8 +71,10 @@ int main() {
 
         clear_all(con, entities_list_head);
 
-        struct action *action = handle_keys(key);
+        handle_keys(key, action);
         if (action->type != NO_ACTION) {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCDFAInspection"
             if (action->type == MOVE && game_state == PLAYERS_TURN) {
                 int dx = action->data.move.dx;
                 int dy = action->data.move.dy;
@@ -92,6 +96,7 @@ int main() {
             } else if (action->type == FULLSCREEN) {
                 TCOD_console_set_fullscreen(!TCOD_console_is_fullscreen());
             }
+#pragma clang diagnostic pop
 
             if (game_state == ENEMY_TURN) {
                 struct entity_list *curr = entities_list_head;
