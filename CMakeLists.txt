@@ -9,7 +9,7 @@ include_directories(lib/libtcod-1.9.0-x86_64-msvc/include)
 link_directories(lib/libtcod-1.9.0-x86_64-msvc/)
 find_library( LIBTCOD_LIB libtcod )
 
-set(SOURCE_FILES src/main.c
+set(SOURCE_FILES src/engine.c
         src/input_handlers.c
         src/input_handlers.h
         src/entity.c

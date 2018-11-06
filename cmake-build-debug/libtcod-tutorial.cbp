@@ -99,6 +99,9 @@
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/data/list.h">
 			<Option target="libtcod-tutorial"/>
 		</Unit>
+		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/engine.c">
+			<Option target="libtcod-tutorial"/>
+		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/entity.c">
 			<Option target="libtcod-tutorial"/>
 		</Unit>
@@ -109,9 +112,6 @@
 			<Option target="libtcod-tutorial"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/input_handlers.h">
-			<Option target="libtcod-tutorial"/>
-		</Unit>
-		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/main.c">
 			<Option target="libtcod-tutorial"/>
 		</Unit>
 		<Unit filename="/cygdrive/e/code/c/libtcod-tutorial/src/map/fov.c">

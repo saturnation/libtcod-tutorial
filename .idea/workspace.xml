@@ -16,8 +16,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6ea63681-508f-4b96-8318-25bfae96e08a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/libtcod-tutorial.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/libtcod-tutorial.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/fighter.c" afterPath="$PROJECT_DIR$/src/components/fighter.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/fighter.h" afterPath="$PROJECT_DIR$/src/components/fighter.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/map/game_map.c" afterPath="$PROJECT_DIR$/src/map/game_map.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/map/game_map.h" afterPath="$PROJECT_DIR$/src/map/game_map.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main.c" afterPath="$PROJECT_DIR$/src/engine.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -34,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.c">
+      <file leaf-file-name="engine.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/engine.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="103" column="39" lean-forward="false" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
+            <state relative-caret-position="465">
+              <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -49,7 +53,7 @@
       <file leaf-file-name="entity.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entity.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="726">
               <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
               <folding />
             </state>
@@ -59,18 +63,8 @@
       <file leaf-file-name="input_handlers.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/input_handlers.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="990">
               <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/list.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -79,8 +73,8 @@
       <file leaf-file-name="input_handlers.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/input_handlers.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="363">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#47#81#0" expanded="true" />
               </folding>
@@ -88,21 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entity.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entity.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="fighter.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/fighter.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+            <state relative-caret-position="231">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding>
                 <element signature="e#47#66#0" expanded="true" />
               </folding>
@@ -110,14 +94,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_map.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fighter.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/fighter.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="661">
+              <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+              <folding>
+                <element signature="e#118#136#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_map.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/map/game_map.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="176" column="48" lean-forward="false" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
+            <state relative-caret-position="168">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="e#47#66#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="render_functions.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/render_functions.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,7 +131,7 @@
       <file leaf-file-name="path.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/libtcod-1.9.0-x86_64-msvc/include/libtcod/path.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="1617">
               <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
               <folding />
             </state>
@@ -135,7 +141,7 @@
       <file leaf-file-name="game_map.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/map/game_map.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
+            <state relative-caret-position="1551">
               <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
               <folding />
             </state>
@@ -193,14 +199,15 @@
         <option value="$PROJECT_DIR$/src/map/fov.c" />
         <option value="$PROJECT_DIR$/src/entity.h" />
         <option value="$PROJECT_DIR$/src/map/rectangle.h" />
-        <option value="$PROJECT_DIR$/src/components/fighter.c" />
-        <option value="$PROJECT_DIR$/src/render_functions.c" />
-        <option value="$PROJECT_DIR$/src/components/fighter.h" />
         <option value="$PROJECT_DIR$/src/map/game_map.h" />
         <option value="$PROJECT_DIR$/src/input_handlers.h" />
         <option value="$PROJECT_DIR$/src/input_handlers.c" />
         <option value="$PROJECT_DIR$/src/main.c" />
+        <option value="$PROJECT_DIR$/src/render_functions.c" />
         <option value="$PROJECT_DIR$/src/map/game_map.c" />
+        <option value="$PROJECT_DIR$/src/components/fighter.c" />
+        <option value="$PROJECT_DIR$/src/components/fighter.h" />
+        <option value="$PROJECT_DIR$/src/engine.c" />
       </list>
     </option>
   </component>
@@ -617,12 +624,13 @@
       <workItem from="1541309710809" duration="1022000" />
       <workItem from="1541310760687" duration="5762000" />
       <workItem from="1541377193260" duration="5458000" />
-      <workItem from="1541417064887" duration="4768000" />
+      <workItem from="1541417064887" duration="4817000" />
+      <workItem from="1541464320701" duration="3630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78146000" />
+    <option name="totallyTimeSpent" value="81825000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,8 +685,13 @@
           <line>25</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/engine.c</url>
+          <line>45</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -870,7 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,29 +927,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/render_functions.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/fighter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entity.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="264">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
@@ -946,25 +940,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data/list.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="363">
           <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/fighter.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#47#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/input_handlers.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="990">
           <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
@@ -972,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/input_handlers.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="363">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#47#81#0" expanded="true" />
           </folding>
@@ -982,7 +966,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/map/game_map.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
+        <state relative-caret-position="1551">
           <caret line="47" column="7" lean-forward="false" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
           <folding />
         </state>
@@ -990,36 +974,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/libtcod-1.9.0-x86_64-msvc/include/libtcod/path.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="1617">
           <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="103" column="39" lean-forward="false" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="726">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/map/game_map.c">
+    <entry file="file://$PROJECT_DIR$/src/render_functions.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="176" column="48" lean-forward="false" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
+        <state relative-caret-position="33">
+          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/fighter.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding>
             <element signature="e#47#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/fighter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+          <folding>
+            <element signature="e#118#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/map/game_map.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

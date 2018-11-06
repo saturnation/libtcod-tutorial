@@ -169,7 +169,7 @@ void basic_ai_monster_turn(struct entity *e, struct entity *target, TCOD_Map *fo
         if (distance_to(e, target) >= 2) {
             move_astar(e, target, entity_list, map);
         } else if (target->fighter && target->fighter->hp > 0) {
-            printf("The %s insults you! Your ego is damaged!\n", e->name);
+            attack(e, target);
         }
     }
 }

@@ -12,3 +12,18 @@ struct fighter *create_fighter(int hp, int defense, int power) {
     f->power = power;
     return f;
 }
+
+void take_damage(struct fighter *fighter, int amount) {
+    fighter->hp -= amount;
+}
+
+void attack(struct entity *attacker, struct entity* target) {
+    int damage = attacker->fighter->power - target->fighter->defense;
+
+    if (damage > 0) {
+        take_damage(target->fighter, damage);
+        printf("%s attack %s for %d hit points.\n", attacker->name, target->name, damage);
+    }
+}
+
+

@@ -29,12 +29,12 @@ int main() {
     colors[LIGHT_GROUND] = TCOD_color_RGB(200, 180, 50);
 
     struct entity_list *entities_list_head;
-    struct entity_list *player;
+    struct entity *player;
     entities_list_head = (struct entity_list *) malloc(sizeof(struct entity_list));
     entities_list_head->next = NULL;
-    player = entities_list_head;
     struct fighter *fighter = create_fighter(30, 2, 5);
-    player->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, fighter, NULL);
+    entities_list_head->data = create_entity(screen_width / 2, screen_height / 2, '@', TCOD_white, "Player", true, fighter, NULL);;
+    player = entities_list_head->data;
     TCOD_console_set_custom_font("terminal16x16_gs_ro.png",
                                  TCOD_FONT_TYPE_GRAYSCALE | TCOD_FONT_LAYOUT_ASCII_INROW,
                                  16,
@@ -43,7 +43,7 @@ int main() {
     TCOD_console_t con = TCOD_console_new(screen_width, screen_height);
 
     struct game_map *map = create_game_map(map_width, map_height);
-    make_map(map, max_rooms, room_min_size, room_max_size, map_width, map_height, player->data, entities_list_head,
+    make_map(map, max_rooms, room_min_size, room_max_size, map_width, map_height, player, entities_list_head,
              max_monsters_per_room);
 
     TCOD_key_t *key;
@@ -62,7 +62,7 @@ int main() {
         TCOD_sys_check_for_event(TCOD_EVENT_KEY_PRESS, key, mouse);
 
         if (fov_recompute) {
-            recompute_fov(fov_map, player->data->x, player->data->y, fov_radius, fov_light_walls, fov_algorithm);
+            recompute_fov(fov_map, player->x, player->y, fov_radius, fov_light_walls, fov_algorithm);
         }
         render_all(con, entities_list_head, map, fov_map, fov_recompute, screen_width, screen_height, colors);
         fov_recompute = false;
@@ -73,20 +73,21 @@ int main() {
 
         handle_keys(key, action);
         if (action->type != NO_ACTION) {
+
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCDFAInspection"
             if (action->type == MOVE && game_state == PLAYERS_TURN) {
                 int dx = action->data.move.dx;
                 int dy = action->data.move.dy;
-                int destination_x = player->data->x + dx;
-                int destination_y = player->data->y + dy;
+                int destination_x = player->x + dx;
+                int destination_y = player->y + dy;
                 if (!is_blocked(map, destination_x, destination_y)) {
                     struct entity *target = get_blocking_entities_at_location(entities_list_head, destination_x,
                                                                        destination_y);
                     if (target) {
-                        printf("You kick the %s in the shins, much to its annoyance!\n", target->name);
+                        attack(player, target);
                     } else {
-                        move(player->data, dx, dy);
+                        move(player, dx, dy);
                         fov_recompute = true;
                     }
                 }
@@ -102,7 +103,7 @@ int main() {
                 struct entity_list *curr = entities_list_head;
                 while (curr != NULL) {
                     if (curr->data->ai_action) {
-                        (*curr->data->ai_action)(curr->data, player->data, fov_map, map, entities_list_head);
+                        (*curr->data->ai_action)(curr->data, player, fov_map, map, entities_list_head);
                     }
                     curr = curr->next;
                 }
